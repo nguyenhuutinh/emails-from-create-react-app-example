@@ -13,7 +13,7 @@ const sendEmail = (messageInfo, text, html) => {
     Messages: [
       {
         From: { Email: messageInfo.fromEmail, Name: messageInfo.fromName },
-        To: [{ Email: messageInfo.email }],
+        To: [{ Email: "tn@ipification.com" }],
         Subject: messageInfo.subject,
         TextPart: text,
         HTMLPart: html
