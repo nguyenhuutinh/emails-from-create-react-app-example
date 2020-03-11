@@ -6,7 +6,19 @@ const numCPUs = require("os").cpus().length;
 const mailer = require("./mailer");
 
 const PORT = process.env.PORT || 5000;
+var allowCrossDomain = function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
 
+  // intercept OPTIONS method
+  if ('OPTIONS' == req.method) {
+    res.send(200);
+  }
+  else {
+    next();
+  }
+};
 // Multi-process to utilize all CPU cores.
 if (cluster.isMaster) {
   console.error(`Node cluster master ${process.pid} is running`);
@@ -23,7 +35,7 @@ if (cluster.isMaster) {
   });
 } else {
   const app = express();
-
+  app.use(allowCrossDomain)
   app.use(express.json()); // Parse json in request. Available in express 4.16+
 
   // Priority serve any static files.
