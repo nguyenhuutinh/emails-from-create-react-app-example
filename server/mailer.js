@@ -34,7 +34,7 @@ exports.sendOne = function(templateName, messageInfo, locals) {
 
   return Promise.all([
     email.render(`${templateName}/html`, locals),
-    email.render(`${templateName}/text`, locals)
+    // email.render(`${templateName}/text`, locals)
   ])
     .then(([html, text]) => {
       // console.log(html, text)

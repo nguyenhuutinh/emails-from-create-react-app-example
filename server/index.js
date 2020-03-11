@@ -33,12 +33,12 @@ if (cluster.isMaster) {
   app.post("/api/send_email", function(req, res) {
     res.set("Content-Type", "application/json");
 
-    const { userName, email } = req.body;
+    const { userName, email, job_title, company_name, message } = req.body;
     const locals = { userName };
     const messageInfo = {
       email,
-      fromName: "Star Wars",
-      subject: "Checkout this awesome droids"
+      fromName: "IPification Website",
+      subject: "We got new contact"
     };
     mailer.sendOne("droids", messageInfo, locals);
     res.send('{"message":"Email sent."}');
