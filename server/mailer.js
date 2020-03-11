@@ -19,7 +19,12 @@ const sendEmail = (messageInfo, text, html) => {
         HTMLPart: html
       }
     ]
-  });
+  }).then((result) => {
+    console.log(result.body)
+})
+.catch((err) => {
+    console.log(err.statusCode)
+});
 };
 
 exports.sendOne = function(templateName, messageInfo, locals) {
