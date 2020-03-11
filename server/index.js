@@ -34,6 +34,7 @@ if (cluster.isMaster) {
     res.set("Content-Type", "application/json");
 
     const { userName, email, job_title, company_name, message } = req.body;
+    console.log(req.body)
     const locals = { userName, email, job_title , company_name, message};
     const messageInfo = {
       email,
