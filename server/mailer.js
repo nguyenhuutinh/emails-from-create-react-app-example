@@ -37,7 +37,7 @@ exports.sendOne = function(templateName, messageInfo, locals) {
     email.render(`${templateName}/text`, locals)
   ])
     .then(([html, text]) => {
-      console.log(html, text)
+      // console.log(html, text)
       return sendEmail(messageInfo, text, html);
     })
     .catch(console.error);
