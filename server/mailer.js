@@ -4,8 +4,8 @@ var templatesDir = path.resolve(__dirname, "views/mailer");
 var Email = require("email-templates");
 
 const mailjet = require("node-mailjet").connect(
-  process.env.MJ_APIKEY_PUBLIC,
-  process.env.MJ_APIKEY_PRIVATE
+  "d02fb312f07bfb40cb670a33d3405050",
+  "c62fffe7fdf7f0a413754612ac59429b"
 );
 
 const sendEmail = (messageInfo, text, html) => {
