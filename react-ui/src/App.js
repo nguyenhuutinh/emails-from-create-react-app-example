@@ -18,9 +18,9 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">Welcome</h1>
         </header>
-        <p className="App-intro">
+        {/* <p className="App-intro">
           <input
             onChange={ev => {
               this.setState({ email: ev.target.value });
@@ -41,7 +41,7 @@ class App extends Component {
           >
             Send Email
           </button>
-        </p>
+        </p> */}
       </div>
     );
   }
