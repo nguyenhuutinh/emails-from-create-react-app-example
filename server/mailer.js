@@ -12,7 +12,7 @@ const sendEmail = (messageInfo, text, html) => {
   return mailjet.post("send", { version: "v3.1" }).request({
     Messages: [
       {
-        From: { Email: messageInfo.fromEmail, Name: messageInfo.fromName },
+        From: { Email: "tn@ipification.com", Name: messageInfo.fromName },
         To: [{ Email: "tn@ipification.com" }],
         Subject: messageInfo.subject,
         TextPart: text,

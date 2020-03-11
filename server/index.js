@@ -37,7 +37,6 @@ if (cluster.isMaster) {
     const locals = { userName };
     const messageInfo = {
       email,
-      fromEmail: "tinh@gmail.com",
       fromName: "Star Wars",
       subject: "Checkout this awesome droids"
     };
